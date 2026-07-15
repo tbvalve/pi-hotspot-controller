@@ -1,0 +1,21 @@
+[Unit]
+Description=Pi Hotspot Controller
+After=network.target
+
+
+[Service]
+
+User=hotspot
+
+WorkingDirectory=/home/hotspot/pi-hotspot-controller
+
+ExecStart=/home/hotspot/pi-hotspot-controller/venv/bin/python -m app.main
+
+Restart=always
+
+RestartSec=5
+
+
+[Install]
+
+WantedBy=multi-user.target
